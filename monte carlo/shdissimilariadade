@@ -1,0 +1,27 @@
+./dissimilaridade matriz1.dat diss10.dat 0.0 0.0 1 250 
+./dissimilaridade matriz1.dat diss12.dat 0.0 0.0 2 250 
+./dissimilaridade matriz1.dat diss13.dat 0.0 0.1 1 250 
+./dissimilaridade matriz1.dat diss14.dat 0.0 0.1 2 250
+./dissimilaridade matriz1.dat diss15.dat 0.0 0.5 1 250
+./dissimilaridade matriz1.dat diss16.dat 0.0 0.5 2 250
+
+./dissimilaridade matriz2.dat diss20.dat 0.0 0.0 1 250 
+./dissimilaridade matriz2.dat diss22.dat 0.0 0.0 2 250 
+./dissimilaridade matriz2.dat diss23.dat 0.0 0.1 1 250 
+./dissimilaridade matriz2.dat diss24.dat 0.0 0.1 2 250
+./dissimilaridade matriz2.dat diss25.dat 0.0 0.5 1 250
+./dissimilaridade matriz2.dat diss26.dat 0.0 0.5 2 250
+
+./dissimilaridade matriz3.dat diss30.dat 0.0 0.0 1 250 
+./dissimilaridade matriz3.dat diss32.dat 0.0 0.0 2 250 
+./dissimilaridade matriz3.dat diss33.dat 0.0 0.1 1 250 
+./dissimilaridade matriz3.dat diss34.dat 0.0 0.1 2 250
+./dissimilaridade matriz3.dat diss35.dat 0.0 0.5 1 250
+./dissimilaridade matriz3.dat diss36.dat 0.0 0.5 2 250
+
+./dissimilaridade matriz4.dat diss40.dat 0.0 0.0 1 250 
+./dissimilaridade matriz4.dat diss42.dat 0.0 0.0 2 250 
+./dissimilaridade matriz4.dat diss43.dat 0.0 0.1 1 250 
+./dissimilaridade matriz4.dat diss44.dat 0.0 0.1 2 250
+./dissimilaridade matriz4.dat diss45.dat 0.0 0.5 1 250
+./dissimilaridade matriz4.dat diss46.dat 0.0 0.5 2 250

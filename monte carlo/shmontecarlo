@@ -1,0 +1,5 @@
+./montecarlos 10 100 250 matriz4.dat
+./montecarlos 3 10 250 matriz1.dat
+./montecarlos 5 20 300 matriz2.dat
+./montecarlos 20 50 250 matriz3.dat
+
