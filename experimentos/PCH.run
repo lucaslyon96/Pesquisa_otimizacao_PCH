@@ -1,0 +1,67 @@
+param alfa default 0.9;
+param contador default 0;
+param interacoes default 0;
+param zbest;
+param clock;
+param z;
+param aux;
+param custo_relaxacao;
+param delta_inicial;
+param delta_final;
+model "pch.ampl";
+data ($file_name);#diss2.dat";
+option solver snopt;
+option relaxintegrality 1;
+drop FSS1;
+
+solve;
+let custo_relaxacao := Obj;
+display solve_result;
+let aux := Infinity;
+let zbest := Infinity;
+let delta := sum{k in 1..m, g in 1..G} zkg[k,g]*(1-zkg[k,g]) + sum{g in 1..G,i in 1..n,j in 1..n}egij[g,i,j]*(1-egij[g,i,j]);
+let delta_inicial := delta;
+	restore FSS1;
+	option relaxintegrality 0;
+	option solver baron;
+	#printf " limite tempo para o resolvedor option baron option ... \n";
+	option baron_options 'maxtime = 1200';
+	let clock := _ampl_elapsed_time;
+	repeat while delta >= 1e-5 && contador < 3 {
+		#printf " reiniciar as variaveis para cada interacao\n";
+		
+		solve;
+		
+		#display solve_result;
+		#printf " viavel ou nao, limite = 20 min \n";
+		if solve_result = "solved" then{
+			let z:= Obj;
+			if z < zbest then{
+				let zbest := z;
+				#printf "passei no if 1 zbest = z  \n";
+			}
+			if z != aux then{ 
+				let contador := 0;# contador para ver quantas vezes o z mudou 
+				#printf "passei no if 2 cont = 0 aux =-1, diferente de -1 atualiza o aux  \n";
+			}
+			if z = aux then {
+				let contador := contador + 1;
+				#printf "passei no if 3 cont ++  \n";
+			}
+		}
+		#display contador;
+		#display delta;
+		#display aux,z,zbest,Obj;
+		let aux := z;
+		let delta := delta * alfa;	
+		let interacoes := interacoes + 1;
+			# 1 segundo = 0.001
+			# 18000 segundos = 
+		#5hrs se ja passou para
+		if _ampl_elapsed_time-clock > 18 then{
+			break;		
+		}
+	}
+	let delta_final :=delta;
+display custo_relaxacao,delta_inicial,delta_final,interacoes,Obj,_total_solve_time >> ($name);#saida.txt;
+quit;

@@ -1,0 +1,6 @@
+model "prod.mod";
+data "geral.dat";
+option solver cplex;
+solve;
+display X;
+quit;

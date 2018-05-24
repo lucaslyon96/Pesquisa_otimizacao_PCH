@@ -1,0 +1,7 @@
+nós de branch and bound = 9950
+GAP = 0.823352%
+LB = 2.29649
+UB = 2.31555
+melhor custo = 2.31555
+
+//esse usei x[i] no else 

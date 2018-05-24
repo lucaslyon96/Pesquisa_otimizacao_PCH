@@ -1,0 +1,5 @@
+model "tese1.mod";
+option solver bnb;
+solve;
+display zkg,egij;
+quit;

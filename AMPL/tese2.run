@@ -1,0 +1,10 @@
+model "pch.ampl";
+data "diss2.dat";
+option solver bnb;
+option log_file tese2log.dat;
+solve;
+
+display zkg,egij;
+display _total_solve_time;
+
+quit;

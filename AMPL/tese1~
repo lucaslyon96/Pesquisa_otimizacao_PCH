@@ -1,0 +1,8 @@
+param m;
+param n;
+param G;
+param k {1..m};
+param d {n,n,k};
+var Zkg {k in m, g in G};
+var Egij {i in n, j in n, g in G};
+

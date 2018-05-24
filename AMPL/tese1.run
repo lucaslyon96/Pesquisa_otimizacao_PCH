@@ -1,0 +1,8 @@
+model "tese1.mod";
+data "model26ampl.dat";
+option solver couenne;
+option couenne_options 'time_limit = 20';
+solve;
+display zkg,egij;
+display _total_solve_time;
+quit;

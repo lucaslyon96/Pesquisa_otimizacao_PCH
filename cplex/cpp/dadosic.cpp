@@ -1,0 +1,62 @@
+#include <iostream>
+#include <fstream>
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <stdio.h>
+#include <ctime>
+#define MAX 550
+using namespace std;
+int main(int argc,char**argv){
+	char* nome_do_arquivo;
+	double seed;	
+	int p,objet;
+		
+	if(argc>1){
+		nome_do_arquivo=argv[1];
+		seed=atof (argv[2]);		
+		p=atoi (argv[3]);
+		objet=atoi (argv[4]);	
+		
+	}	
+	srand(seed);
+	ofstream escrita (nome_do_arquivo);
+	if (!escrita.is_open()){
+		cout<< "Falha ao ler arquivo!"<<endl;
+		exit(1);
+	}
+	escrita<<p<< " "<<objet<<endl;
+	double matriz[MAX][MAX];
+	for(int i=0;i<objet;i++){
+		for(int j=0;j<objet;j++){
+			if(j!=i){
+				matriz[i][j]=rand()/(float)RAND_MAX;
+				matriz[j][i]=matriz[i][j];
+			}
+			matriz[i][i]=0;
+		}
+	}
+	for(int i=0;i<objet;i++){
+		if(i==0){
+		escrita<<"[";
+		}
+		escrita<<"[";
+		for(int j=0;j<objet;j++){
+			escrita<<matriz[i][j];
+			if(j!=objet-1){
+			escrita<<",";
+			}
+		}
+		escrita<<"]";
+		if(i<objet-1){
+			escrita<<",";
+		}
+		if(i==objet-1){
+			escrita<<"]";
+		}
+		escrita<<endl;
+	}
+	escrita.close();
+	cout<< "FINISH "<<endl;
+	return 0;
+	}

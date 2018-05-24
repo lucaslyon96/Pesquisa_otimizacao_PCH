@@ -1,0 +1,21 @@
+custo_relaxacao = 4.5
+delta_inicial = 1.28319
+delta_final = 0.841901
+interacoes = 4
+Obj = 4.5
+_total_solve_time = 5.808
+
+custo_relaxacao = 4.5
+delta_inicial = 1.28319
+delta_final = 0.841901
+interacoes = 4
+Obj = 4.5
+_total_solve_time = 5.696
+
+custo_relaxacao = 4.5
+delta_inicial = 1.28319
+delta_final = 0.841901
+interacoes = 4
+Obj = 4.5
+_total_solve_time = 5.724
+
